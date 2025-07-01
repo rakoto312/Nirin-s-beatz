@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8" />
+	<title>NIRIN'S BEATZ - Store</title>
+<style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #fff;
+    }
+    header {
+      background-color: #00c896;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h2 {
+      margin-top: 30px;
+      color: #00c896;
+    }
+    .beat-card {
+      background: #1e1e2f;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+    .beat-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .beat-plays {
+      color: #ccc;
+      font-size: 14px;
+    }
+    .beat-price {
+      color: #00ff99;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    button.pay-btn {
+      background: #00c896;
+      border: none;
+      color: white;
+      padding: 10px 16px;
+      font-size: 16px;
+      margin-top: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button.pay-btn:hover {
+      background: #00a374;
+    }
+    /* Admin login style */
+    #adminLogin {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+    #adminLogin h3 {
+      margin-top: 0;
+      color: #00c896;
+      text-align: center;
+    }
+    #adminLogin input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+    }
+    #adminLogin button {
+      background: #00c896;
+      border: none;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+    #adminLogin button:hover {
+      background: #00a374;
+    }
+    #adminMessage {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+</style>
+  </head>
+  <body>
+	<header>🎧 NIRIN'S BEATZ 🎶</header>
+	<div class="container">
+	  <button>⬆️ Upload Your Beat</button>
+
+	  <h2>Afrozouk</h2>
+	  <div class="beat-card">
+		<div class="beat-title">Zouk Summer Vibe</div>
+		<div class="beat-plays">🔊 1.2K Plays</div>
+		<div class="beat-price">💵 $12</div>
+		<button class="pay-btn" onclick="pay('Zouk Summer Vibe')">Pay Now</button>
+	  </div>
+
+	  <h2>Afrobeat</h2>
+	  <div class="beat-card">
+		<div class="beat-title">Lagos Groove</div>
+		<div class="beat-plays">🔊 2.1K Plays</div>
+		<div class="beat-price">💵 $12</div>
+		<button class="pay-btn" onclick="pay('Lagos Groove')">Pay Now</button>
+	  </div>
+
+	  <h2>Afropop</h2>
+	  <div class="beat-card">
+		<div class="beat-title">Feel Good Pop</div>
+		<div class="beat-plays">🔊 980 Plays</div>
+		<div class="beat-price">💵 $12</div>
+		<button class="pay-btn" onclick="pay('Feel Good Pop')">Pay Now</button>
+	  </div>
+
+	  <h2>Drill</h2>
+	  <div class="beat-card">
+		<div class="beat-title">UK Drill Type Beat</div>
+		<div class="beat-plays">🔊 3.5K Plays</div>
+		<div class="beat-price">💵 $12</div>
+		<button class="pay-btn" onclick="pay('UK Drill Type Beat')">Pay Now</button>
+	  </div>
+
+	  <div id="adminLogin">
+		<h3>Admin Login</h3>
+		<input type="password" id="adminPass" placeholder="Enter Admin Password" />
+		<button onclick="checkAdmin()">Login</button>
+		<div id="adminMessage"></div>
+	  </div>
+	</div>
+
+<script>
+    // Simple pay function (just alert)
+    function pay(beatName) {
+      alert('Thank you for purchasing: ' + beatName + '\\nPayment gateway is not yet implemented.');
+    }
+
+    // Admin password check (hardcoded: 'admin123')
+    function checkAdmin() {
+      var pass = document.getElementById('adminPass').value;
+      var message = document.getElementById('adminMessage');
+      if(pass === 'admin123') {
+        message.style.color = 'lime';
+        message.textContent = 'Welcome Admin!';
+        // Here you can add admin features later
+      } else {
+        message.style.color = 'red';
+        message.textContent = 'Wrong password!';
+      }
+    }
+</script>
+  </body>
+</html>
+
